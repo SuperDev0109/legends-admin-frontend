@@ -4,6 +4,7 @@ import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { availableAction } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 const AvailableOn = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,7 @@ const AvailableOn = () => {
     const onDelete = (delete_id) => {
         setState('delete');
 
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
             text: 'Delete this Available Item?',
@@ -61,13 +62,13 @@ const AvailableOn = () => {
                 formData.append('id', delete_id);
                 try {
                     await dispatch(availableAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Deleted',
                         showConfirmButton: true,
                     })
-                    location.replace('');
+                    window.location.replace('');
                 } catch(err) {
                     console.log(err);
                 }
@@ -78,7 +79,7 @@ const AvailableOn = () => {
         switch(state) {
             case 'create':
                 if(!files) {
-                    swalWithBootstrapButtons.fire(
+                    Swal.fire(
                         'Warning',
                         'Please select the file',
                         'warning'
@@ -95,7 +96,7 @@ const AvailableOn = () => {
                 }
                 try {
                     await dispatch(availableAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Created',
@@ -119,7 +120,7 @@ const AvailableOn = () => {
                 }
                 try {
                     await dispatch(availableAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Updated',

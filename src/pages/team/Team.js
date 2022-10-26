@@ -4,6 +4,7 @@ import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { teamAction } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 const Team = () => {
     const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const Team = () => {
         setFiles("");
         setRole("");
 
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
             text: 'Delete this team member?',
@@ -65,13 +66,13 @@ const Team = () => {
                 formData.append('id', delete_id);
                 try {
                     await dispatch(teamAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Deleted',
                         showConfirmButton: true,
                     })
-                    location.replace('');
+                    window.location.replace('');
                 } catch(err) {
                     console.log(err);
                 }
@@ -82,7 +83,7 @@ const Team = () => {
         switch(state) {
             case 'create':
                 if(!files) {
-                    swalWithBootstrapButtons.fire(
+                    Swal.fire(
                         'Warning',
                         'Please select the file',
                         'warning'
@@ -99,7 +100,7 @@ const Team = () => {
                 }
                 try {
                     await dispatch(teamAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Created',
@@ -123,7 +124,7 @@ const Team = () => {
                 }
                 try {
                     await dispatch(teamAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Updated',

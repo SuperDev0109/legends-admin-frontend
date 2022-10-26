@@ -3,6 +3,7 @@ import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { collectImgAction } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 const CollectImg = () => {
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const CollectImg = () => {
     const onDelete = (delete_id) => {
         setState('delete');
 
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
             text: 'Delete this Collect Image?',
@@ -54,13 +55,13 @@ const CollectImg = () => {
                 formData.append('id', delete_id);
                 try {
                     await dispatch(collectImgAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Deleted',
                         showConfirmButton: true,
                     })
-                    location.replace('');
+                    window.location.replace('');
                 } catch(err) {
                     console.log(err);
                 }
@@ -71,7 +72,7 @@ const CollectImg = () => {
         switch(state) {
             case 'create':
                 if(!files) {
-                    swalWithBootstrapButtons.fire(
+                    Swal.fire(
                         'Warning',
                         'Please select the file',
                         'warning'
@@ -87,7 +88,7 @@ const CollectImg = () => {
                 }
                 try {
                     await dispatch(collectImgAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Created',
@@ -110,7 +111,7 @@ const CollectImg = () => {
                 }
                 try {
                     await dispatch(collectImgAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Updated',

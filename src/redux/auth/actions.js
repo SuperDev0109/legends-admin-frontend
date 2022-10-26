@@ -18,13 +18,14 @@ import {
     SAVE_AVAILABLES,
     SAVE_SOCIALLINKS
 } from '../action_types';
+import Swal from 'sweetalert2';
 
 export const dashboardTextAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
                 var res = await api.post('/auth/dashboardAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Dashboard Text has been saved',
@@ -32,7 +33,7 @@ export const dashboardTextAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -60,7 +61,7 @@ export const contactUsTextAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/contactUsAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Contact Us Text has been saved',
@@ -68,7 +69,7 @@ export const contactUsTextAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -100,7 +101,7 @@ export const dashboardImageSaveAction = (formData) => async dispatch => {
         });
 
         // var res = await api.post('/auth/dashboardImageSaveAction', formData);
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'success',
             title: 'Success',
             text: 'The Dashboard Image has been saved',
@@ -108,7 +109,7 @@ export const dashboardImageSaveAction = (formData) => async dispatch => {
         })
     } catch (err) {
         console.log(err);
-        swalWithBootstrapButtons.fire(
+        Swal.fire(
             'Warning',
             'Something went wrong',
             'warning'
@@ -125,7 +126,7 @@ export const mapImageSaveAction = (formData) => async dispatch => {
         });
 
         // var res = await api.post('/auth/dashboardImageSaveAction', formData);
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'success',
             title: 'Success',
             text: 'The Dashboard Image has been saved',
@@ -133,7 +134,7 @@ export const mapImageSaveAction = (formData) => async dispatch => {
         })
     } catch (err) {
         console.log(err);
-        swalWithBootstrapButtons.fire(
+        Swal.fire(
             'Warning',
             'Something went wrong',
             'warning'
@@ -147,7 +148,7 @@ export const mapTextAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/mapAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Dashboard Text has been saved',
@@ -155,7 +156,7 @@ export const mapTextAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -183,7 +184,7 @@ export const mapLinkAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/mapLinkAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Map Link has been saved',
@@ -191,7 +192,7 @@ export const mapLinkAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -219,7 +220,7 @@ export const tokenPriceAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/tokenPriceAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Token Price has been saved',
@@ -227,7 +228,7 @@ export const tokenPriceAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -255,7 +256,7 @@ export const tokenPercentAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/tokenPercentAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Token Percent has been saved',
@@ -263,7 +264,7 @@ export const tokenPercentAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -291,7 +292,7 @@ export const collectTextAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/collectAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Dashboard Text has been saved',
@@ -299,7 +300,7 @@ export const collectTextAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -327,7 +328,7 @@ export const ourteamTextAction = (formData) => async dispatch => {
         case 'save':
             try {
                 var res = await api.post('/auth/ourteamAction', formData);
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'The Dashboard Text has been saved',
@@ -335,7 +336,7 @@ export const ourteamTextAction = (formData) => async dispatch => {
                 })
             } catch (err) {
                 console.log(err);
-                swalWithBootstrapButtons.fire(
+                Swal.fire(
                     'Warning',
                     'Something went wrong',
                     'warning'
@@ -368,7 +369,7 @@ export const faqsAction = (formData) => async dispatch => {
         });
         switch(formData.type) {
             case 'create':
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'Successfully Created',
@@ -376,7 +377,7 @@ export const faqsAction = (formData) => async dispatch => {
                 })
                 break;
             case 'update':
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'Successfully Updated',
@@ -384,7 +385,7 @@ export const faqsAction = (formData) => async dispatch => {
                 })
                 break;
             case 'delete':
-                swalWithBootstrapButtons.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'Successfully Deleted',
@@ -486,7 +487,7 @@ export const socialAction = (formData) => async dispatch => {
             type: SAVE_TEAMS,
             payload: res.data
         });
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'success',
             title: 'Success',
             text: 'Successfully Updated',

@@ -4,6 +4,7 @@ import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { partnershipAction } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 const Partnership = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,7 @@ const Partnership = () => {
     const onDelete = (delete_id) => {
         setState('delete');
 
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
             text: 'Delete this Partnership?',
@@ -61,13 +62,13 @@ const Partnership = () => {
                 formData.append('id', delete_id);
                 try {
                     await dispatch(partnershipAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Deleted',
                         showConfirmButton: true,
                     })
-                    location.replace('');
+                    window.location.replace('');
                 } catch(err) {
                     console.log(err);
                 }
@@ -78,7 +79,7 @@ const Partnership = () => {
         switch(state) {
             case 'create':
                 if(!files) {
-                    swalWithBootstrapButtons.fire(
+                    Swal.fire(
                         'Warning',
                         'Please select the file',
                         'warning'
@@ -95,7 +96,7 @@ const Partnership = () => {
                 }
                 try {
                     await dispatch(partnershipAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Created',
@@ -119,7 +120,7 @@ const Partnership = () => {
                 }
                 try {
                     await dispatch(partnershipAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Updated',

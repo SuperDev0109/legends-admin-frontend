@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 // import Footer from "../../components/Layout/Footer";
+import Swal from "sweetalert2"
 import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { DefaultEditor } from 'react-simple-wysiwyg';
@@ -35,7 +36,7 @@ const FAQs = () => {
         setState('delete');
         setId(id);
 
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
             text: 'Delete this FAQ?',

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 // import Footer from "../../components/Layout/Footer";
+import Swal from 'sweetalert2';
 import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { DefaultEditor } from 'react-simple-wysiwyg';
@@ -65,7 +66,7 @@ const Dashboard = () => {
     const onDashboardImgSave = async () => {
         const formData = new FormData();
         if(!files) {
-            swalWithBootstrapButtons.fire(
+            Swal.fire(
                 'Warning',
                 'Please select the file',
                 'warning'
@@ -82,7 +83,7 @@ const Dashboard = () => {
     const onMapImgSave = async () => {
         const formData = new FormData();
         if(!mapFiles) {
-            swalWithBootstrapButtons.fire(
+            Swal.fire(
                 'Warning',
                 'Please select the file',
                 'warning'

@@ -4,6 +4,7 @@ import Header from "../../components/Layout/Header";
 import Navbar from "../../components/Layout/Navbar";
 import { socialLinkAction } from '../../redux/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 const SocialLink = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,7 @@ const SocialLink = () => {
     const onDelete = (delete_id) => {
         setState('delete');
 
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
             text: 'Delete this Social Link?',
@@ -61,13 +62,13 @@ const SocialLink = () => {
                 formData.append('id', delete_id);
                 try {
                     await dispatch(socialLinkAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Deleted',
                         showConfirmButton: true,
                     })
-                    location.replace('');
+                    window.location.replace('');
                 } catch(err) {
                     console.log(err);
                 }
@@ -78,7 +79,7 @@ const SocialLink = () => {
         switch(state) {
             case 'create':
                 if(!files) {
-                    swalWithBootstrapButtons.fire(
+                    Swal.fire(
                         'Warning',
                         'Please select the file',
                         'warning'
@@ -95,7 +96,7 @@ const SocialLink = () => {
                 }
                 try {
                     await dispatch(socialLinkAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Created',
@@ -119,7 +120,7 @@ const SocialLink = () => {
                 }
                 try {
                     await dispatch(socialLinkAction(formData));
-                    swalWithBootstrapButtons.fire({
+                    Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'Successfully Updated',
