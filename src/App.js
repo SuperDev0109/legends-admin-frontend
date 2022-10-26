@@ -21,18 +21,18 @@ function App() {
     <Provider store={store}>
       <Router>
         <Routes>
-          <Route exact path="/admin" element={<Dashboard />} />
-          <Route exact path="/admin/dashboard" element={<Dashboard />} />
-          <Route exact path="/admin/faqs" element={<FAQs />} />
-          <Route exact path="/admin/partnership" element={<Partnership />} />
-          <Route exact path="/admin/collectImgs" element={<CollectImg />} />
-          <Route exact path="/admin/availableOn" element={<AvailableOn />} />
-          <Route exact path="/admin/sociallink" element={<SocialLink />} />
-          <Route exact path="/admin/team" element={<Team />} />
-          <Route exact path="/admin/social" element={<Social />} />
-          <Route exact path="/admin/signin" element={<SignIn />} />
-          <Route exact path="/admin/signup" element={<SignUp />} />
-          <Route exact path="/admin/form" element={<Form />} />
+          <Route exact path="/" element={<Dashboard />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/faqs" element={<FAQs />} />
+          <Route exact path="/partnership" element={<Partnership />} />
+          <Route exact path="/collectImgs" element={<CollectImg />} />
+          <Route exact path="/availableOn" element={<AvailableOn />} />
+          <Route exact path="/sociallink" element={<SocialLink />} />
+          <Route exact path="/team" element={<Team />} />
+          <Route exact path="/social" element={<Social />} />
+          <Route exact path="/signin" element={<SignIn />} />
+          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/form" element={<Form />} />
         </Routes>
       </Router>
     </Provider>
