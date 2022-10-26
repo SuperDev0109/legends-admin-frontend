@@ -24,7 +24,7 @@ export const dashboardTextAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/dashboardAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/dashboardAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -42,7 +42,7 @@ export const dashboardTextAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/dashboardAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/dashboardAction', formData);
                 dispatch({
                     type: SAVE_DASHBOARDTEXT,
                     payload: res.data
@@ -60,7 +60,7 @@ export const contactUsTextAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/contactUsAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/contactUsAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -78,7 +78,7 @@ export const contactUsTextAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/contactUsAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/contactUsAction', formData);
                 dispatch({
                     type: SAVE_CONTACTUSTEXT,
                     payload: res.data
@@ -94,13 +94,13 @@ export const contactUsTextAction = (formData) => async dispatch => {
 
 export const dashboardImageSaveAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/dashboardImageSaveAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/dashboardImageSaveAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
         });
 
-        // var res = await api.post('/auth/dashboardImageSaveAction', formData);
+        // var res = await api.post('http://82.180.161.198/api/auth/dashboardImageSaveAction', formData);
         Swal.fire({
             icon: 'success',
             title: 'Success',
@@ -119,13 +119,13 @@ export const dashboardImageSaveAction = (formData) => async dispatch => {
 
 export const mapImageSaveAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/mapImageSaveAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/mapImageSaveAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
         });
 
-        // var res = await api.post('/auth/dashboardImageSaveAction', formData);
+        // var res = await api.post('http://82.180.161.198/api/auth/dashboardImageSaveAction', formData);
         Swal.fire({
             icon: 'success',
             title: 'Success',
@@ -147,7 +147,7 @@ export const mapTextAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/mapAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/mapAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -165,7 +165,7 @@ export const mapTextAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/mapAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/mapAction', formData);
                 dispatch({
                     type: SAVE_MAPTEXT,
                     payload: res.data
@@ -183,7 +183,7 @@ export const mapLinkAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/mapLinkAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/mapLinkAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -201,7 +201,7 @@ export const mapLinkAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/mapLinkAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/mapLinkAction', formData);
                 dispatch({
                     type: SAVE_MAPLINK,
                     payload: res.data
@@ -219,7 +219,7 @@ export const tokenPriceAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/tokenPriceAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/tokenPriceAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -237,7 +237,7 @@ export const tokenPriceAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/tokenPriceAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/tokenPriceAction', formData);
                 dispatch({
                     type: SAVE_TOKENPRICE,
                     payload: res.data
@@ -255,7 +255,7 @@ export const tokenPercentAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/tokenPercentAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/tokenPercentAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -273,7 +273,7 @@ export const tokenPercentAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/tokenPercentAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/tokenPercentAction', formData);
                 dispatch({
                     type: SAVE_TOKENPERCENT,
                     payload: res.data
@@ -291,7 +291,7 @@ export const collectTextAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/collectAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/collectAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -309,7 +309,7 @@ export const collectTextAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/collectAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/collectAction', formData);
                 dispatch({
                     type: SAVE_COLLECTTEXT,
                     payload: res.data
@@ -327,7 +327,7 @@ export const ourteamTextAction = (formData) => async dispatch => {
     switch(formData.type) {
         case 'save':
             try {
-                var res = await api.post('/auth/ourteamAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/ourteamAction', formData);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -345,7 +345,7 @@ export const ourteamTextAction = (formData) => async dispatch => {
             break;
         case 'get':
             try {
-                var res = await api.post('/auth/ourteamAction', formData);
+                var res = await api.post('http://82.180.161.198/api/auth/ourteamAction', formData);
                 dispatch({
                     type: SAVE_OURTEAMTEXT,
                     payload: res.data
@@ -361,7 +361,7 @@ export const ourteamTextAction = (formData) => async dispatch => {
 
 export const faqsAction = (formData) => async dispatch => {
     try {
-        var res = await api.post('/auth/faqsAction', formData);
+        var res = await api.post('http://82.180.161.198/api/auth/faqsAction', formData);
         console.log(res.data);
         dispatch({
             type: SAVE_FAQS,
@@ -402,7 +402,7 @@ export const faqsAction = (formData) => async dispatch => {
 
 export const partnershipAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/partnershipAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/partnershipAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -418,7 +418,7 @@ export const partnershipAction = (formData) => async dispatch => {
 
 export const socialLinkAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/socialLinkAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/socialLinkAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -434,7 +434,7 @@ export const socialLinkAction = (formData) => async dispatch => {
 
 export const availableAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/availableAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/availableAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -450,7 +450,7 @@ export const availableAction = (formData) => async dispatch => {
 
 export const collectImgAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/collectImgAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/collectImgAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -466,7 +466,7 @@ export const collectImgAction = (formData) => async dispatch => {
 
 export const teamAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/teamAction', formData, {
+        var res = await axios.post('http://82.180.161.198/api/auth/teamAction', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -482,7 +482,7 @@ export const teamAction = (formData) => async dispatch => {
 
 export const socialAction = (formData) => async dispatch => {
     try {
-        var res = await axios.post('/api/auth/socialAction', formData);
+        var res = await axios.post('http://82.180.161.198/api/auth/socialAction', formData);
         dispatch({
             type: SAVE_TEAMS,
             payload: res.data
